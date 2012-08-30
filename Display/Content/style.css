@@ -419,7 +419,7 @@ margin: 0 auto;
 {
 color:#cbcbcb;
 text-decoration: none;
-font-size: 12px;
+/*font-size: 12px;*/
 }
 
 #footer .box_custom_footer{
@@ -454,6 +454,21 @@ text-align: center;
 border: none;
 }
 
+/* My footer edits */ 
+
+#footer ul {
+	list-style: none;
+}
+
+#footer-nav {
+	float: right;
+}
+
+#footer li {
+	float: left;
+	margin: 0 0 40px 20px;
+	font-size: 24px;
+}
 
 .custom_button strong{
 display: block;
