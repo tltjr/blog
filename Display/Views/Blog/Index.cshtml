@@ -14,10 +14,28 @@
                 @Html.Partial("_Sidebar", Model.Sidebar)
                 <div id="content">
                     @Html.Partial("_Summaries", Model.Posts)
-                    <div class="pagination">
-                        <span class="current">1</span> <a class="inactive" href="#">2</a> <a class="inactive"
-                            href="#">3</a> <a class="inactive" href="#">4</a> <a class="inactive" href="#">5</a>
-                    </div>
+					@{
+						const int postsPerPage = 5;
+					}
+					@if (Model.Count > postsPerPage)
+					{
+						<div class="pagination">
+							<span class="current">1</span> 
+							<a class="inactive" href="#">2</a> 
+							@if (Model.Count > postsPerPage * 2)
+							{
+								<a class="inactive" href="#">3</a>
+								if (Model.Count > postsPerPage * 3)
+								{
+									 <a class="inactive" href="#">4</a>
+									  if (Model.Count > postsPerPage * 4)
+									  {
+										  <a class="inactive" href="#">5</a>
+									  }
+								}
+							}
+						</div>
+					}
                 </div>
                 <!-- end content -->
             </div>

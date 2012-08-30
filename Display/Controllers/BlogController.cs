@@ -24,6 +24,7 @@ namespace Display.Controllers
             var blogModel = new BlogModel()
                                 {
                                     Posts = posts.Take(10),
+									Count = posts.Count,
                                     Sidebar = sidebar
                                 };
             return View(blogModel);

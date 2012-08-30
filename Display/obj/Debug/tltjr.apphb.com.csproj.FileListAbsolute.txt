@@ -1,0 +1,13 @@
+E:\src\dotnet\blog\Display\bin\Display.dll
+E:\src\dotnet\blog\Display\bin\Display.pdb
+E:\src\dotnet\blog\Display\bin\EntityFramework.dll
+E:\src\dotnet\blog\Display\bin\MongoDB.Bson.dll
+E:\src\dotnet\blog\Display\bin\MongoDB.Driver.dll
+E:\src\dotnet\blog\Display\bin\EntityFramework.xml
+E:\src\dotnet\blog\Display\bin\MongoDB.Bson.pdb
+E:\src\dotnet\blog\Display\bin\MongoDB.Bson.xml
+E:\src\dotnet\blog\Display\bin\MongoDB.Driver.pdb
+E:\src\dotnet\blog\Display\bin\MongoDB.Driver.xml
+E:\src\dotnet\blog\Display\obj\Debug\ResolveAssemblyReference.cache
+E:\src\dotnet\blog\Display\obj\Debug\Display.dll
+E:\src\dotnet\blog\Display\obj\Debug\Display.pdb

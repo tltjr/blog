@@ -8,7 +8,16 @@
         </div> <!-- end date -->
         <h2>
             @Html.ActionLink(@post.Title, @post.Url)</h2>
-            @Html.Partial("_Tags", post.Tags)
+			@if (@post.Tags != null)
+			{
+				@Html.Partial("_Tags", @post.Tags)
+			}
+			else
+			{
+				<div class='post_data'>
+					@Html.Partial("_Author")
+				</div>
+			}
             @{
                    var summary = @post.Summary;
                    var sumHtml = summary.Replace("\r\n", "<br />");

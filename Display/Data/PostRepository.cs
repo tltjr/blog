@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using Display.Extensions;
 using Display.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -21,14 +23,14 @@ namespace Display.Data
         {
             if (null == key || null == value) return null;
             var query = Query.EQ(key, value);
-            return _collection.FindOne(query);
+	        return _collection.FindOne(query);
         }
 
         public IEnumerable<Post> FindAllByKey(string key, string value)
         {
             if (null == key || null == value) return null;
             var query = Query.EQ(key, value);
-            return _collection.Find(query);
+	        return _collection.Find(query);
         }
 
         public IEnumerable<Post> FindAll()
@@ -58,7 +60,7 @@ namespace Display.Data
         {
             if (null == objectId) return null;
             var query = Query.EQ("_id", new BsonObjectId(objectId));
-            return _collection.FindOne(query);
+	        return _collection.FindOne(query);
         }
 
         public IEnumerable<string> FindTags()
@@ -66,16 +68,13 @@ namespace Display.Data
             var result = new List<string>();
             foreach (var post in _collection.FindAll())
             {
-                var tags = post.Tags;
-                foreach (var tag in tags)
-                {
-                    if(!result.Contains(tag))
-                    {
-                        result.Add(tag);
-                    }
-                }
+	            var tags = post.Tags ?? Enumerable.Empty<string>();
+	            foreach (var tag in tags.Where(tag => !result.Contains(tag)))
+	            {
+		            result.Add(tag);
+	            }
             }
-            return result;
+	        return result;
         }
     }
 }
